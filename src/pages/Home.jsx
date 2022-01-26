@@ -1,7 +1,11 @@
 import React from 'react';
 
+
+import Userlist from '../components/users/Userlist';
 function Home() {
-  return <div>This is Home</div>;
+  
+ 
+  return <Userlist />
 }
 
 export default Home;
