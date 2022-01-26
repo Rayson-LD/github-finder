@@ -1,8 +1,9 @@
 import React from 'react';
 import {Link} from "react-router-dom"
 import {FaGithub,FaHome,FaInfoCircle} from "react-icons/fa"
+import PropTypes from 'prop-types';
 
-function Nabar() {
+function Nabar({title}) {
   return( 
     <div className="navbar mb-2 shadow-lg bg-warning text-neutral-content rounded-box">
     <div className="flex-none px-2 mx-2">
@@ -30,6 +31,12 @@ function Nabar() {
     </div>
   </div>
 );
+}
+Nabar.defaultProps = {
+  title:"Github Finder"
+}
+Nabar.PropTypes = {
+  title:PropTypes.string.isRequired
 }
 
 export default Nabar;
