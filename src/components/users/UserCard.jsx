@@ -4,20 +4,20 @@ import PropTypes from 'prop-types';
 function UserCard({userinfo: {login,avatar_url}}) {
   return (
     
-    <div class="card lg:card-side glass">
+    <div className="card lg:card-side glass">
     <figure>
-    <div class="avatar">
-  <div class="ml-8 mt-3 rounded-full w-24 h-24">
+    <div className="avatar">
+  <div className="ml-8 mt-3 rounded-full w-24 h-24">
     <img src={avatar_url}/>
   </div>
 </div>
 </figure>
     
-    <div class="card-body">
-      <h2 class="card-title">{login}</h2> 
-      <div class="card-actions">
+    <div className="card-body">
+      <h2 className="card-title">{login}</h2> 
+      <div className="card-actions">
           <Link to={`/users/${login}`}>
-        <button class="btn btn-ghost">More info</button>
+        <button className="btn btn-ghost">More info</button>
         </Link>
       </div>
     </div>
@@ -26,7 +26,7 @@ function UserCard({userinfo: {login,avatar_url}}) {
   
   );
 }
-UserCard.PropTypes ={
+UserCard.propTypes ={
   userinfo:PropTypes.object.isRequired
 }
 export default UserCard;

@@ -35,7 +35,7 @@ function Nabar({title}) {
 Nabar.defaultProps = {
   title:"Github Finder"
 }
-Nabar.PropTypes = {
+Nabar.propTypes = {
   title:PropTypes.string.isRequired
 }
 
