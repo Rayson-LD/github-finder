@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 function Nabar({title}) {
   return( 
-    <div className="navbar mb-2 shadow-lg bg-warning text-neutral-content rounded-box">
+    <div className="navbar mb-2  shadow-lg bg-warning text-neutral-content rounded-box">
     <div className="flex-none px-2 mx-2">
     <div className="flex-none">
       <span className="btn btn-square btn-ghost">

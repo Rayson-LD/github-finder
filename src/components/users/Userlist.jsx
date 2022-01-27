@@ -11,7 +11,7 @@ function Userlist() {
   if(!loading)
   {
     return (
-        <div className="grid grid-cols-3 gap-2 pl-2  pb-10 pt-5 pr-2">
+        <div className="grid grid-cols-3 gap-2 pl-2   pb-10 pt-5 pr-2">
           {
           User.map((user)=>(
               <UserCard key={user.id} userinfo={user}/>
