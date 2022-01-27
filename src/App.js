@@ -5,6 +5,7 @@ import Footer from "./components/layouts/Footer"
 import About from "./pages/About"
 import Home from "./pages/Home"
 import NoFound from './pages/NoFound'
+
 import { GithubProvider } from "./Context/UsersContext/GithubContext"
 function App()
 {
@@ -12,7 +13,9 @@ function App()
         <GithubProvider>
         <Router>
         <Nabar />
+        
         <Routes>
+            
             <Route path='/' element={<Home />}/>
             <Route path='/about' element={<About />}/>
             <Route path='/' element={<NoFound />}/>

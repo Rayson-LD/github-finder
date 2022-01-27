@@ -37,11 +37,26 @@ export const GithubProvider = ({children}) => {
             
         })
       }
+      const setAlert = (type,msg) =>{
+          dispatch({
+              type:'Set_Alert',
+              payload:{type,msg}
+          })
+
+          setTimeout(()=>{
+              dispatch(
+                  {
+                      type:'Stop_Alert',  
+                  }
+              )
+          },3000)
+      }
       return <GitHubContext.Provider value={{
           User:state.User,
           loading: state.loading,
           searchUser,
-          clear
+          clear,
+          setAlert
           
       }}>
           {children }
