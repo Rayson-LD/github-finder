@@ -5,13 +5,15 @@ import Footer from "./components/layouts/Footer"
 import About from "./pages/About"
 import Home from "./pages/Home"
 import NoFound from './pages/NoFound'
-
+import { AlertProvider } from "./Context/AlertContext/AlertContext"
 import { GithubProvider } from "./Context/UsersContext/GithubContext"
 function App()
 {
     return(
         <GithubProvider>
+            <AlertProvider>
         <Router>
+        <div class="flex flex-col h-screen justify-between">
         <Nabar />
         
         <Routes>
@@ -22,7 +24,9 @@ function App()
             <Route path='/*' element={<NoFound />}/>
             </Routes>
         <Footer />
+        </div>
     </Router>
+    </AlertProvider>
     </GithubProvider>
         
     )
