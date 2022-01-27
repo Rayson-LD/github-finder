@@ -3,10 +3,11 @@ import {useState,useContext} from'react'
 import GitHubContext from '../../Context/UsersContext/GithubContext';
 function UserSearch() {
     const [text, settext] = useState('');
-    const {User} = useContext(GitHubContext)
+    const {User,searchUser} = useContext(GitHubContext)
     const handleInput = (e) =>{
 
         settext(e.target.value)
+        
     }
     const handleSubmit = (e) =>{
         e.preventDefault()
@@ -15,10 +16,11 @@ function UserSearch() {
             alert("Please add something")
         }
         else{
+          searchUser(text)
             settext('')
         }
     }
-  return <div className="form-control m-auto w-3/4">
+  return <div className="form-control  m-auto w-3/4">
   <label className=" text-center">
     <span className=" text-3xl">Search any Github Users</span>
   </label> 

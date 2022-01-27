@@ -7,10 +7,10 @@ function Home() {
   
  
   return(
-    <div className="flex  min-h-screen">
+    <>
     <UserSearch/> 
     <Userlist />
-    </div>
+    </>
   );
   
 }
