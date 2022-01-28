@@ -16,7 +16,7 @@ function UserCard({userinfo: {login,avatar_url}}) {
     <div className="card-body">
       <h2 className="card-title">{login}</h2> 
       <div className="card-actions">
-          <Link to={`/users/${login}`}>
+          <Link to={`/user/${login}`}>
         <button className="btn btn-ghost">More info</button>
         </Link>
       </div>

@@ -11,6 +11,13 @@ const GithubReducer = (state,action) =>{
                 User:action.payload,
                 loading:false
             }
+            case 'Get_User' :
+            return {
+                ...state,
+                user:action.payload,
+                loading:false
+                
+            }
         case 'Set_Clear' :
             return{
                 User:[]

@@ -7,7 +7,8 @@ export const GithubProvider = ({children}) => {
 
     const initialState = {
         User:[],
-        loading:false
+        loading:false,
+        user:{}
     }
     const setLoading = () =>{
         dispatch({
@@ -37,12 +38,33 @@ export const GithubProvider = ({children}) => {
             
         })
       }
+      const UserDetails = async (login) => {
+        
+        setLoading()
+        const response = await fetch(`${GITHUB_URL}/users/${login}`)
+        
+        if(response.status === 404)
+        {
+            window.location = '\NoFound'
+        }
+        else{
+            const data = await response.json()
+            dispatch ( {
+                type:'Get_User',
+                payload:data,
+                
+            })
+        }
+        
+      }
       
       return <GitHubContext.Provider value={{
           User:state.User,
           loading: state.loading,
+          user:state.user,
           searchUser,
           clear,
+          UserDetails
           
           
       }}>
