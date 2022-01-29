@@ -4,12 +4,8 @@ import RepoItem from './RepoItem';
 
 
 function Repolist({repos}) {
-  return <div className="card lg:card-side card-bordered">
-    <div className="card-body">
-      <h2 className="card-title">Latest Repositiories</h2> 
-      
-    </div>
-  </div>
+  return <h3> {repos.map((repo) => (<RepoItem repo={repo} key={repo.id} />))}</h3>
+   
 }
 Repolist.propTypes = {
     repos: PropTypes.array.isRequired,

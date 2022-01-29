@@ -18,13 +18,13 @@ const GithubReducer = (state,action) =>{
                 loading:false
                 
             }
-            case 'GET_REPOS': {
+            case 'GET_REPOS': 
                 return {
                   ...state,
                   repos: action.payload,
                   loading: false
                 }
-            }
+            
               
         case 'Set_Clear' :
             return{

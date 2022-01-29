@@ -1,6 +1,6 @@
 import React from 'react';
 import {useEffect,useContext} from 'react'
-import { FaUserFriends,FaUsers,FaCodepen,FaStore,FaClock } from 'react-icons/fa';
+import { FaUserFriends,FaUsers,FaCodepen,FaStore,FaClock,FaDesktop } from 'react-icons/fa';
 import Spinner from '../layouts/Spinner';
 import Repolist from '../layouts/repo/Repolist';
 import { useParams } from 'react-router';
@@ -70,7 +70,7 @@ function UserDetail() {
     </div>
   </div>
 </div>
-<div className=" min-h-screen bg-base-200">
+<div className=" w-full bg-base-300 ">
 <div className="w-full shadow stats">
   <div className="stat">
     <div className="stat-figure text-primary">
@@ -133,9 +133,22 @@ function UserDetail() {
     <h2 className="card-title">Created
       <div className="badge mx-2">{created_at}</div>
     </h2> 
-   <Repolist repos={repos} />
+   
+  </div>
+  
+</div>
+
+</div>
+<div className=" w-full bg-base-300">
+<div className="card lg:card-side card-bordered pt-10">
+  <figure>
+    <FaDesktop size='45' color='pink'/>
+  </figure> 
+  <div className="card-body">
+    <h2 className="card-title">Latest Repositories</h2> 
   </div>
 </div>
+ <Repolist repos={repos} /> 
 </div>
 </>
 }
