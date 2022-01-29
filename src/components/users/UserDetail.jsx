@@ -8,7 +8,7 @@ import GitHubContext from '../../Context/UsersContext/GithubContext';
 function UserDetail() {
     const {user,UserDetails,loading,repos,getUserRepos} = useContext(GitHubContext);
     const params = useParams()
-    console.log(repos)
+   
     useEffect(() => {
       UserDetails(params.login)
       getUserRepos(params.login)

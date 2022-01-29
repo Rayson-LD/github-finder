@@ -62,12 +62,19 @@ export const GithubProvider = ({children}) => {
       const getUserRepos = async (login) => {
         setLoading()
         const response = await fetch(`https://api.github.com/users/${login}/repos?per_page=5&sort=created:asc`);
-        const data = await response.json()
+        if(response.status === 404)
+        {
+            window.location = '\NoFound'
+        }
+        else{
+            const data = await response.json()
         
         dispatch({
           type: 'GET_REPOS',
           payload: data,
         })
+        }
+        
       }
       
       return <GitHubContext.Provider value={{
